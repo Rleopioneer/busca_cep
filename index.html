@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO || BUSCA CEP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form id="formCadastro" action="GET" target="_blank">
+            <h1>Informe o CEP</h1>
+            <p>Digite o CEP para completar seu endereço!!!!</p>
+            <div class="inputs">
+                <label for="cep">CEP
+                    <input type="text" name="cep" id="cep" placeholder="Somente números">
+                    <span class="erro"></span>
+                </label>
+    
+                <label for="rua">Logradouro
+                    <input type="text" name="rua" id="rua" placeholder="Digite sua rua aqui">
+                    <span class="erro"></span>
+                </label>
+    
+                <label for="rua">Bairro
+                    <input type="text" name="bairro" id="bairro" placeholder="ex.: 'Centro'">
+                    <span class="erro"></span>
+                </label>
+    
+                <label for="rua">Cidade
+                    <input type="text" name="cidade" id="cidade" placeholder="ex.: sua cidade aqui">
+                    <span class="erro"></span>
+                </label>
+    
+                <label for="rua">Estado
+                    <input type="text" name="estado" id="estado" placeholder="ex.: 'RJ'">
+                    <span class="erro"></span>
+                </label>
+            </div>
+            <button id="enviar" type="submit">Enviar</button>   
+        </form>
+    </div>   
+    
+    <script src="script.js"></script>
+</body>
+</html>
