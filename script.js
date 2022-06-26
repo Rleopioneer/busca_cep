@@ -1,20 +1,4 @@
-/****************DESAFIO CONSULTA CEP********************/
-/* 1 -​ Criar um formulário com os campos CEP, logradouro, cidade, uf e número. ***
-2 - Estilizar os campos de formulários. ***
-3 - Atribuir os campos dos formuários em variáveis.****
-3 - criar preventDefault. ***
-4 - Criar função para fazer requisição para a API viaCEP.****
-5 - Encontrar a resposta da API equivalente ao valor digitado no campo CEP (filter() ou reduce()) ****Não foi necessário***
-6 - Validar o valor digitado (8 dígitos e sem espaço ou traço) ****???
-7 - Inserir os valores da resposta nos outros campos do formulário****
-
-Quando o usuário preencher o CEP os outros campos deverão ser preenchidos automaticamente.
-​O usuário deverá digitar o CEP e quando chegar no valor de 8 digitos ou fizer o evento blur, deverá ser feita uma requisição do tipo GET para a api do ViaCEP (https://viacep.com.br/) passando o valor do CEP.
-
-Exemplo: ​viacep.com.br/ws/VALOR_DO_CEP/json/
-
-A API retornará os valores que devem ser inseridos nos campos, conforme na imagem.​ 
-*/
+/****************CONSULTA CEP********************/
 
 const formulario = document.querySelector('#formCadastro')
 const container = document.querySelector('.container')
