@@ -1,6 +1,6 @@
-# Frontend Mentor - QR code component solution
+# Busca_CEP
 
-Esta é a minha solução  para o  [QR code component challenge ](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H) do Frontend Mentor.
+Cria página simples simulando formulário de preenchimento de endereço. Endereço é preenchido de acordo com o CEP informado pelo usuário.
 
 Desenvolvendo habilidades adquiridas no curso de formação   [Formação Fullstack JavaScript ](https://go.hotmart.com/O72157469D) 
 
@@ -8,9 +8,6 @@ Desenvolvendo habilidades adquiridas no curso de formação   [Formação Fullst
 
 ## Conteúdo
 
-- [Visão Geral](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
 - [Meu Processo](#my-process)
   - [Desenvolvido com](#built-with)
   - [O que aprendi](#what-i-learned)
@@ -18,9 +15,6 @@ Desenvolvendo habilidades adquiridas no curso de formação   [Formação Fullst
 - [Autor](#author)
 
 
-## Links
-
-- GitHub: (https://rleopioneer.github.io/qr_code/)
 
 ## Meu Processo
 
@@ -29,40 +23,44 @@ Desenvolvendo habilidades adquiridas no curso de formação   [Formação Fullst
 - HTML5 
 - CSS3
 - SASS
-- Position Relative e Absolute
-- Transform Translate
+- JavaScript
 
 ### O que aprendi
 
-Desenvolvi a página posicionando os elementos com position relative e absolute em duas situações diferentes, ao invés de margin: 0 auto ou Flexbox, para tentar garantir sua centralização.
+Validação do formulário antes do envio. Valor do CEP informado é capturado após evento de blur, o valor é utilizado para preencher a URL para requisição da API. Após alguns segundos a resposta é inserida preenchendo o restante do formulário com o endereço informado de acordo com o CEP.
 
-Posicionamento do QR code:
+Evento blur:
 
-```css
-body .container .qrcard {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 240px;
-  height: 400px;
-```
-Footer:
-
-```css
-body .attribution {
-  color: #1f3251;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  margin-bottom: -10px;
-  margin-left: -191.9px;
-  text-align: center;
+```javascript
+const foradeFoco = (e) => {
+    
+    function transformarEmJson(response){
+        return response.json()
+    }
+    
+    function exibirNaTela(response){        
+        const efeito = () => {
+            bairro.value = `........`
+            cidade.value = `........`
+            rua.value = `........`
+            estado.value = `........`
+        }
+    
+        setTimeout(function(){
+            bairro.value = `${response.bairro}`
+            cidade.value = `${response.localidade}`
+            rua.value = `${response.logradouro}`
+            estado.value = `${response.uf}`
+        }, 3000)
+    
+        return efeito()
+        
+    }
 ```
 
 ### Conteúdos úteis
 
-- [Google Fonts]([Browse Fonts - Google Fonts](https://fonts.google.com/)) 
+- [ViaCEP](https://viacep.com.br/)
 
 ## Author
 
